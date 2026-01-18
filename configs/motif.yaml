@@ -1,0 +1,15 @@
+# household motif 定义与筛选
+
+motif_attributes:
+  - age_group
+  - sex
+
+# 覆盖率与 zero-cell 控制
+selection:
+  coverage_threshold: 0.99           # CDF 覆盖比例
+  ensure_person_type_coverage: true  # 每种 (age_bin, sex) 至少出现一次
+  ensure_household_size_coverage: true
+
+# 户规模截断策略
+max_household_size: 6                # 与 schema 一致；>6 归为 6
+

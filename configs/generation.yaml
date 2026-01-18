@@ -1,0 +1,15 @@
+# 合成人口生成配置
+
+population_size: 100000              # 目标个体数，示例值；实际请改为城市人口总数
+random_seed: 42
+
+output:
+  path: "outputs/populations/pop.csv"
+  format: "csv"
+  fields: ["pid", "hid", "gender", "age"]  # 输出字段
+
+# 年龄反采样（可选）
+age_resample:
+  enabled: false                     # 若 true，则从年龄段内均匀/自定义分布采样具体年龄
+  strategy: "uniform"
+

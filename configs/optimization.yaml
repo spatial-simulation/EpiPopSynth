@@ -1,0 +1,21 @@
+# motif 权重优化配置
+
+method: "nnls"                       # 这里实现为正则化非负最小二乘
+
+regularization:
+  use_survey_prior: true
+  strength: 1.0                      # 对 (x - x_init) 的权重系数
+
+solver:
+  max_iter: 50
+  ftol: 1e-12
+  xtol: 1e-12
+  gtol: 1e-10
+
+bounds:
+  scale: 50.0                        # 上界 = max(x_init) * scale
+
+random:
+  seed: 42
+  lognormal_noise_std: 0.5           # 对初值的扰动；若不需要设为 0
+

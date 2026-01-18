@@ -1,0 +1,22 @@
+# 输入数据与字段映射
+input:
+  survey_path: "data/raw/shenzhen/survey_family_only.csv"   # 必填：包含 household_id, gender, age 的调查微观数据
+
+fields:
+  person_id: "person_id"                     # 若无可留空，内部会生成
+  household_id: "household_id"
+  gender: "gender"
+  age: "age"
+
+# 编码与离散化
+gender_mapping:                       # 把原始性别值映射为 {female:0, male:1}
+  female: [0, "F", "f", "female", "Female"]
+  male:   [1, "M", "m", "male", "Male"]
+
+age:
+  type: "continuous"                  # "continuous" 或 "binned"
+  bins: [10, 20, 30, 40, 50, 60, 70, 80]  # 右开区间边界，80 表示 80+ 尾箱；若 type=binned 可留空
+
+# 基本约束
+max_household_size: 6                 # 户规模上限，大于此值的按上限截断
+

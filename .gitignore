@@ -1,0 +1,18 @@
+# python
+__pycache__/
+*.pyc
+
+# outputs
+outputs/
+
+# local data
+data/raw/
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+
+# Private raw data
+data/raw/
